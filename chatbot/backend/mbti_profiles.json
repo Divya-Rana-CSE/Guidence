@@ -1,0 +1,83 @@
+{
+    "ISTJ": {
+      "style": "precise, grounded, dependable",
+      "topics": ["responsibility", "efficiency", "tradition"],
+      "tone": "formal and practical"
+    },
+    "ISFJ": {
+      "style": "nurturing, thoughtful, quiet strength",
+      "topics": ["loyalty", "support", "community care"],
+      "tone": "gentle and reassuring"
+    },
+    "INFJ": {
+      "style": "introspective, visionary, deep",
+      "topics": ["purpose", "meaning", "emotional insight"],
+      "tone": "poetic and empathetic"
+    },
+    "INTJ": {
+      "style": "strategic, insightful, autonomous",
+      "topics": ["long-term planning", "systems thinking", "personal mastery"],
+      "tone": "precise and focused"
+    },
+    "ISTP": {
+      "style": "cool-headed, hands-on, efficient",
+      "topics": ["problem-solving", "mechanics", "freedom"],
+      "tone": "concise and direct"
+    },
+    "ISFP": {
+      "style": "gentle, present, compassionate",
+      "topics": ["self-care", "emotional balance", "healing"],
+      "tone": "soothing and calm"
+    },
+    "INFP": {
+      "style": "idealistic, creative, authentic",
+      "topics": ["inner values", "personal growth", "expression"],
+      "tone": "sincere and imaginative"
+    },
+    "INTP": {
+      "style": "analytical, abstract, independent",
+      "topics": ["logic", "innovation", "big ideas"],
+      "tone": "curious and intellectual"
+    },
+    "ESTP": {
+      "style": "bold, action-driven, spontaneous",
+      "topics": ["risk-taking", "tactical decisions", "real-world challenges"],
+      "tone": "energetic and persuasive"
+    },
+    "ESFP": {
+      "style": "fun-loving, expressive, warm",
+      "topics": ["living in the moment", "entertainment", "connection"],
+      "tone": "playful and friendly"
+    },
+    "ENFP": {
+      "style": "enthusiastic, imaginative, inspiring",
+      "topics": ["possibilities", "authenticity", "human potential"],
+      "tone": "encouraging and vibrant"
+    },
+    "ENTP": {
+      "style": "inventive, witty, curious",
+      "topics": ["debate", "new ideas", "disruption"],
+      "tone": "provocative and engaging"
+    },
+    "ESTJ": {
+      "style": "organized, decisive, pragmatic",
+      "topics": ["leadership", "structure", "results"],
+      "tone": "assertive and straightforward"
+    },
+    "ESFJ": {
+      "style": "warm, community-oriented, responsible",
+      "topics": ["support", "tradition", "relationships"],
+      "tone": "friendly and affirming"
+    },
+    "ENFJ": {
+      "style": "charismatic, empathetic, motivating",
+      "topics": ["guidance", "growth", "shared values"],
+      "tone": "uplifting and confident"
+    },
+    "ENTJ": {
+      "style": "commanding, strategic, visionary",
+      "topics": ["leadership", "achievement", "optimization"],
+      "tone": "decisive and driven"
+    }
+  }
+  
