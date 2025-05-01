@@ -1,0 +1,356 @@
+:root {
+  --app-dark-blue: #1A1F2C;
+  --app-light-blue: #2A3040;
+  --app-purple: #9b87f5;
+  --app-purple-light: #b8a9f7;
+  --app-success: rgba(50, 180, 100, 0.2);
+  --app-success-text: rgba(50, 180, 100, 1);
+  --white: #fff;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--app-dark-blue);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--app-dark-blue);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--app-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.logo span {
+  color: var(--white);
+  font-weight: bold;
+}
+
+.header h1 {
+  color: var(--app-purple-light);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.points {
+  color: var(--gray-300);
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--gray-300);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.logout-button:hover {
+  color: var(--white);
+}
+
+/* Container Styles */
+.container {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.success-alert {
+  background-color: var(--app-success);
+  color: var(--app-success-text);
+}
+
+/* Content Styles */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--app-light-blue);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* Personality Type Styles */
+.personality-type h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.personality-type p {
+  color: var(--gray-300);
+}
+
+/* Question of the Day Styles */
+.question-of-day {
+  background: linear-gradient(135deg, #3a4356 0%, #2A3040 100%);
+}
+
+.question-of-day h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.question-of-day p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Button Styles */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary {
+  background-color: var(--app-purple);
+  color: var(--white);
+  border: none;
+}
+
+.primary:hover {
+  background-color: var(--app-purple-light);
+}
+
+.outline {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.outline:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* AI Support Styles */
+.ai-support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon-circle {
+  background-color: rgba(155, 135, 245, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.ai-support h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ai-support p {
+  color: var(--gray-300);
+  margin-bottom: 1.5rem;
+}
+
+/* Book Recommendations Styles */
+.book-recommendations h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-recommendations > p {
+  color: var(--gray-300);
+  margin-bottom: 1.5rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.book-item {
+  background-color: var(--app-light-blue);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-cover {
+  width: 3rem;
+  height: 4rem;
+  background-color: var(--gray-400);
+  border-radius: 0.25rem;
+  margin: 0 auto 0.75rem;
+}
+
+.book-item h3 {
+  color: var(--white);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.book-item .author {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.book-item .description {
+  color: var(--gray-300);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive Layout */
+@media screen and (min-width: 768px) {
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .columns {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .column {
+    margin-bottom: 1.5rem;
+  }
+  
+  .column:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Feedback Button Styles */
+/*
+.submit-feedback-box {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+*/
+
+#submitFeedback.green {
+  color: green;
+}
+
+#submitFeedback.red {
+  color: red;
+}
+
+#commentSection {
+  margin-top: 20px;
+}
+
+#userComment {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.cancel-button {
+  background-color: #ddd;
+  color: #333;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #ccc;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Guidance - Personalized Development</title>
+  <meta name="description" content="Personalized guidance and support for teens based on personality types" />
+  <meta name="author" content="Lovable" />
+  <meta property="og:title" content="Teen Guidance" />
+  <meta property="og:description" content="Personalized guidance and support for teens based on personality types" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <span>T</span>
+        </div>
+        <h1>Teen Guidance</h1>
+      </div>
+      <div class="header-right">
+        <span class="points">123</span>
+        <button class="logout-button">
+          <span class="icon">↩</span>
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Success Alert Section -->
+      <div class="alert success-alert">
+        <div>Login successful!</div>
+      </div>
+
+      <!-- Main Content Section -->
+      <div class="content">
+        <!-- Personality Type Section -->
+        <div class="card personality-type">
+          <h2 id="mbti-type">ESTJ</h2>
+          <p>You are more introverted and prefer quiet reflection.</p>
+        </div>
+
+        <!-- Question of the Day Section -->
+        <div class="card question-of-day">
+          <h2>Question of the Day</h2>
+          <p id="qotd-text">Loading question...</p>
+          <div class="button-container">
+            <button class="button outline">Share Your Thoughts</button>
+          </div>
+        </div>
+
+        <!-- Hidden Comment Section -->
+        <div class="card comment-section" id="commentSection" style="display: none;">
+          <h2>Your Thoughts</h2>
+          <textarea
+            id="userComment"
+            rows="4"
+            placeholder="Write your answer here..."
+            style="width: 100%; padding: 10px; border-radius: 8px;"
+          ></textarea>
+          <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <button class="button cancel-button" onclick="cancelComment()">Cancel</button>
+            <button class="button primary" onclick="submitComment()">Share</button>
+          </div>
+        </div>
+
+
+        <div id="submitFeedback" style="font-size: 24px; display: inline-block; margin-left: 10px;"></div>
+
+
+
+        <!-- AI Support and Book Recommendations Section -->
+        <div class="columns">
+          <!-- AI Support Chat -->
+          <div class="column">
+            <div class="card ai-support">
+              <div class="icon-container">
+                <div class="icon-circle">
+                  <span class="icon">🤖</span>
+                </div>
+              </div>
+              <h2>AI Support Chat</h2>
+              <p>Get personalized guidance and support from our AI friend.</p>
+              <button class="button primary">Start Chatting</button>
+            </div>
+          </div>
+
+          <!-- Book Recommendations -->
+          <div class="column">
+            <div class="card book-recommendations">
+              <h2>Book Recommendations</h2>
+              <p>Discover books tailored to your personality type</p>
+              <div class="book-grid">
+                <div class="book-item">
+                  <div class="book-cover"></div>
+                  <h3>Quiet: The Power of Introverts</h3>
+                  <p class="author">Susan Cain</p>
+                  <p class="description">Perfect for understanding and embracing your introverted nature</p>
+                </div>
+                <div class="book-item">
+                  <div class="book-cover"></div>
+                  <h3>Mindset: The New Psychology of Success</h3>
+                  <p class="author">Carol S. Dweck</p>
+                  <p class="description">Develop a growth mindset that aligns with your analytical nature</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- End columns -->
+      </div> <!-- End content -->
+    </div> <!-- End container -->
+  </div> <!-- End app -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
