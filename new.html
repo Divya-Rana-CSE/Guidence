@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+  <style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #d99a9f 0%, #2f4a7a 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .container {
+    background: rgba(177, 181, 192, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    color: #12304a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+  .container:hover {
+    transform: translateZ(20px) scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    outline: none;
+  }
+  .question {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  button {
+    background: #12304a;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+  }
+  button:hover {
+    background: #0f253a;
+    transform: translateZ(10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    outline: none;
+  }
+  .result {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #12304a;
+  }
+  /* Login Section */
+  #loginSection {
+    background: rgba(177, 181, 192, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    max-width: 24rem;
+    width: 100%;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    color: #12304a;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+  #loginSection:hover {
+    transform: translateZ(20px) scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    outline: none;
+  }
+  .profile-image {
+    background: #12304a;
+    border-radius: 9999px;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+    cursor: default;
+  }
+  .profile-image:hover {
+    transform: translateX(-50%) translateY(-5px) translateZ(15px) scale(1.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    outline: none;
+  }
+  /* Inputs and icons */
+  input[type="email"],
+  input[type="password"] {
+    background: #5a6d85a6;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0 0.375rem 0.375rem 0;
+    border: none;
+    outline-offset: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+  }
+  input[type="email"]:hover,
+  input[type="email"]:focus,
+  input[type="password"]:hover,
+  input[type="password"]:focus {
+    transform: translateZ(10px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    outline: none;
+  }
+  /* Input icon containers */
+  .flex > div.bg-\[\#12304a\] {
+    background: #12304a;
+    padding: 0.75rem;
+    border-radius: 0.375rem 0 0 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+    cursor: default;
+  }
+  .flex > div.bg-\[\#12304a\]:hover {
+    transform: translateZ(10px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    outline: none;
+  }
+  /* Checkbox */
+  input[type="checkbox"] {
+    width: 0.75rem;
+    height: 0.75rem;
+    cursor: pointer;
+    /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+    /* will-change: transform, box-shadow; */
+  }
+  input[type="checkbox"]:hover {
+    transform: translateZ(8px) scale(1.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    outline: none;
+  }
+  /* Labels for options in MBTI test */
+  label.flex.items-center.space-x-3.cursor-pointer {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+    user-select: none;
+  }
+  label.flex.items-center.space-x-3.cursor-pointer:hover {
+    transform: translateZ(8px) scale(1.03);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    outline: none;
+  }
+  
+  </style>
+</head>
+<body>
+
+<!-- LOGIN FORM -->
+<div id="loginSection" class="w-80 sm:w-96">
+  <div class="profile-image">
+    <i class="fas fa-user text-white text-4xl"></i>
+  </div>
+  <form id="loginForm" autocomplete="off">
+    <div class="flex items-center mb-4">
+      <div class="bg-[#12304a] p-3 rounded-l-md">
+        <i class="fas fa-user text-white text-lg"></i>
+      </div>
+      <input id="email" type="email" placeholder="Email ID" required class="flex-1" />
+    </div>
+
+    <div class="flex items-center mb-6">
+      <div class="bg-[#12304a] p-3 rounded-l-md">
+        <i class="fas fa-lock text-white text-lg"></i>
+      </div>
+      <input id="password" type="password" placeholder="Password" required class="flex-1" />
+    </div>
+
+    <div class="flex justify-between items-center mb-10 text-xs text-[#12304a]">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" class="w-3 h-3" />
+        <span>Remember me</span>
+      </label>
+      <a href="#" class="italic text-[#12304a]/70 hover:text-[#12304a]">Forgot Password?</a>
+    </div>
+
+    <button type="submit" class="w-full py-3 bg-[#12304a] text-white rounded-3xl shadow-lg">LOGIN</button>
+  </form>
+</div>
+
+<!-- MBTI TEST SECTION -->
+<div id="mbtiTest" class="container hidden">
+  <h1 class="text-2xl font-bold text-center mb-4">MBTI Personality Test</h1>
+  <div id="questionContainer"></div>
+  <button id="nextBtn" class="w-full mt-4">Next</button>
+  <div class="result" id="result" style="display:none;"></div>
+</div>
+
+<script>
+  let currentUserEmail = "";
+
+  const questions = [
+    { question: "You’re more:", options: [{ text: "Outgoing and sociable", value: "E" }, { text: "Reserved and reflective", value: "I" }] },
+    { question: "At a party, you:", options: [{ text: "Interact with many, including strangers", value: "E" }, { text: "Interact with a few, known to you", value: "I" }] },
+    { question: "You prefer to focus on:", options: [{ text: "The reality of how things are", value: "S" }, { text: "The possibilities of what could be", value: "N" }] },
+    { question: "When learning, you prefer:", options: [{ text: "Practical and concrete information", value: "S" }, { text: "Abstract and theoretical concepts", value: "N" }] },
+    { question: "You make decisions based on:", options: [{ text: "Logic and objective analysis", value: "T" }, { text: "Personal values and how others feel", value: "F" }] },
+    { question: "In conflict, you tend to:", options: [{ text: "Be straightforward and firm", value: "T" }, { text: "Seek harmony and avoid hurting feelings", value: "F" }] },
+    { question: "You prefer your life to be:", options: [{ text: "Planned and organized", value: "J" }, { text: "Flexible and spontaneous", value: "P" }] },
+    { question: "When working on projects, you:", options: [{ text: "Like to finish before deadline", value: "J" }, { text: "Prefer to keep options open", value: "P" }] }
+  ];
+
+  let answers = [];
+  let currentQuestionIndex = 0;
+
+  const loginForm = document.getElementById('loginForm');
+  const loginSection = document.getElementById('loginSection');
+  const mbtiTest = document.getElementById('mbtiTest');
+  const questionContainer = document.getElementById('questionContainer');
+  const nextBtn = document.getElementById('nextBtn');
+  const resultDiv = document.getElementById('result');
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = loginForm.email.value.trim();
+    if (!email) return;
+    currentUserEmail = email;
+    loginSection.style.display = 'none';
+    mbtiTest.classList.remove('hidden');
+    renderQuestion();
+  });
+
+  function renderQuestion() {
+    const q = questions[currentQuestionIndex];
+    questionContainer.innerHTML = `
+      <div class="question">${q.question}</div>
+      <div class="options">
+        ${q.options.map(opt => `
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input type="radio" name="option" value="${opt.value}" class="form-radio" />
+            <span>${opt.text}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    nextBtn.disabled = true;
+    document.querySelectorAll('input[name="option"]').forEach(radio => {
+      radio.addEventListener('change', () => nextBtn.disabled = false);
+    });
+  }
+
+  function calculateMBTI() {
+    const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+    answers.forEach(ans => counts[ans]++);
+    return (
+      (counts.E >= counts.I ? "E" : "I") +
+      (counts.S >= counts.N ? "S" : "N") +
+      (counts.T >= counts.F ? "T" : "F") +
+      (counts.J >= counts.P ? "J" : "P")
+    );
+  }
+
+  function showResult() {
+    const mbtiType = calculateMBTI();
+    questionContainer.style.display = 'none';
+    nextBtn.style.display = 'none';
+    resultDiv.style.display = 'block';
+    resultDiv.textContent = `Your MBTI personality type is: ${mbtiType}`;
+
+    // ✅ Fixed localStorage saving
+    const prevResults = JSON.parse(localStorage.getItem('mbtiResults') || '[]');
+    prevResults.push({ email: currentUserEmail, mbti: mbtiType, date: new Date().toISOString() });
+    localStorage.setItem('mbtiResults', JSON.stringify(prevResults));
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if (!selected) return;
+    answers.push(selected.value);
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #d99a9f 0%, #2f4a7a 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.container {
+  background: rgba(177, 181, 192, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  color: #12304a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+.container:hover {
+  transform: translateZ(20px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+  outline: none;
+}
+.question {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+button {
+  background: #12304a;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+}
+button:hover {
+  background: #0f253a;
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  outline: none;
+}
+.result {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #12304a;
+}
+/* Login Section */
+#loginSection {
+  background: rgba(177, 181, 192, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  max-width: 24rem;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  color: #12304a;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+#loginSection:hover {
+  transform: translateZ(20px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+  outline: none;
+}
+.profile-image {
+  background: #12304a;
+  border-radius: 9999px;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  cursor: default;
+}
+.profile-image:hover {
+  transform: translateX(-50%) translateY(-5px) translateZ(15px) scale(1.1);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  outline: none;
+}
+/* Inputs and icons */
+input[type="email"],
+input[type="password"] {
+  background: #5a6d85a6;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  border: none;
+  outline-offset: 2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+}
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus {
+  transform: translateZ(10px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  outline: none;
+}
+/* Input icon containers */
+.flex > div.bg-\[\#12304a\] {
+  background: #12304a;
+  padding: 0.75rem;
+  border-radius: 0.375rem 0 0 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+  cursor: default;
+}
+.flex > div.bg-\[\#12304a\]:hover {
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  outline: none;
+}
+/* Checkbox */
+input[type="checkbox"] {
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+  /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+  /* will-change: transform, box-shadow; */
+}
+input[type="checkbox"]:hover {
+  transform: translateZ(8px) scale(1.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  outline: none;
+}
+/* Labels for options in MBTI test */
+label.flex.items-center.space-x-3.cursor-pointer {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+  user-select: none;
+}
+label.flex.items-center.space-x-3.cursor-pointer:hover {
+  transform: translateZ(8px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  outline: none;
+}
